@@ -35,7 +35,7 @@ router.post('/', upload.single('testImage'),(req,res)=>{
 
 router.put('/',upload.single('testImage'),async (req, res)=>{
     const data = await Admin.find()
-    const admin = data[0]
+    const admin = await data[0]
     admin.text = req.body.text
     admin.image = {
         data : fs.readFileSync('uploads/'+ req.file.filename),
