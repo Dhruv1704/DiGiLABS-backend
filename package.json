@@ -11,6 +11,8 @@
   },
   "name": "backend",
   "version": "1.0.0",
+  "proxy": "https://id.kiotviet.vn",
+  "homepage": "https://digilabs-assignment.web.app",
   "main": "index.js",
   "author": "",
   "license": "ISC",
