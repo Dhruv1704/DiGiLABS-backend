@@ -20,7 +20,7 @@ app.get('/', async (req, res) => {
     res.json(data)
 })
 
-app.use('/api/admin', require('./routes/admin'))
+app.use('/api', require('./routes/admin'))
 
 app.listen(port, () => {
     console.log(`App listening on https://digilabs-backend.vercel.app/`)

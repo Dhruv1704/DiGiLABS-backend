@@ -22,7 +22,7 @@ router.get('/',(req, res)=>{
     res.json("Admin page")
 })
 
-router.post('/',async (req,res)=>{
+router.post('/admin',async (req,res)=>{
     try {
         const admin = await Admin.create({
             text: req.body.text,
@@ -34,12 +34,12 @@ router.post('/',async (req,res)=>{
     }
 })
 
-router.put('/',async (req, res)=>{
+router.put('/admin',async (req, res)=>{
     try {
         const data = await Admin.find()
-        const admin = await data[0]
-        admin.text = await req.body.text
-        admin.image = await req.body.testImage
+        const admin = data[0]
+        admin.text = req.body.text
+        admin.image = req.body.testImage
         await admin.save()
         res.json(admin)
     }catch (e){
