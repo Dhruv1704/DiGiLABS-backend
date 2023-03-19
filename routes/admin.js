@@ -41,7 +41,7 @@ router.put('/',upload.single('testImage'),async (req, res)=>{
         data : fs.readFileSync('uploads/'+ req.file.filename),
         contentType: "image/*"
     }
-    admin.save()
+    await admin.save()
     res.json(admin)
 })
 
