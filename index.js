@@ -3,6 +3,8 @@ const connectToMongo = require("./db");
 const Admin = require("./models/Admin");
 const cors = require('cors')
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 const app = express()
 const port = process.env.PORT || 5000;
 
@@ -10,6 +12,8 @@ connectToMongo()
 
 app.use(cors())
 app.use(express.json())
+
+app.use('/admin', createProxyMiddleware({ target: 'https://digilabs-assignment.web.app/', changeOrigin: true }));
 
 
 app.get('/',async (req,res)=>{
