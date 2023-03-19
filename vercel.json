@@ -9,17 +9,8 @@
   "routes": [
 
     {
-      "src": "/",
+      "src": "/(.*)",
       "dest": "/"
-    },
-    {
-      "src": "/admin",
-      "methods": [
-        "POST",
-        "PUT",
-        "GET"
-      ],
-      "dest": "/routes/admin.js"
     }
   ]
 }
