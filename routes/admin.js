@@ -38,8 +38,8 @@ router.put('/',async (req, res)=>{
     try {
         const data = await Admin.find()
         const admin = await data[0]
-        admin.text = req.body.text
-        admin.image = req.body.testImage
+        admin.text = await req.body.text
+        admin.image = await req.body.testImage
         await admin.save()
         res.json(admin)
     }catch (e){
