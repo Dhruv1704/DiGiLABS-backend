@@ -22,5 +22,5 @@ app.get('/',async (req,res)=>{
 app.use('/admin',require('./routes/admin'))
 
 app.listen(port,()=>{
-    console.log(`App listening on http://localhost:${port}`)
+    console.log(`App listening on https://digilabs-backend.vercel.app/`)
 })
