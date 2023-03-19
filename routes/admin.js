@@ -22,13 +22,13 @@ router.get('/',(req, res)=>{
     res.json("Admin page")
 })
 
-router.post('/',(req,res)=>{
+router.post('/',async (req,res)=>{
     try {
-        const admin = Admin.create({
+        const admin = await Admin.create({
             text: req.body.text,
             image: req.body.testImage
-        }).then((res) => console.log("Logo and title changed."))
-            .catch((e) => console.log(e, "error has occur"))
+        })
+        res.json(admin)
     }catch (e){
         res.status(409).json({"message":e})
     }
