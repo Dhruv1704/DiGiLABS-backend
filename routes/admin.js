@@ -26,10 +26,7 @@ router.post('/',(req,res)=>{
     try {
         const admin = Admin.create({
             text: req.body.text,
-            image: {
-                data: req.body.testImage,
-                contentType: "image/*"
-            }
+            image: req.body.testImage
         }).then((res) => console.log("Logo and title changed."))
             .catch((e) => console.log(e, "error has occur"))
     }catch (e){
@@ -42,10 +39,7 @@ router.put('/',async (req, res)=>{
         const data = await Admin.find()
         const admin = await data[0]
         admin.text = req.body.text
-        admin.image = {
-            data: req.body.testImage,
-            contentType: "image/*"
-        }
+        admin.image = req.body.testImage
         await admin.save()
         res.json(admin)
     }catch (e){
