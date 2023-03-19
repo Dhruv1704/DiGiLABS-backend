@@ -6,5 +6,11 @@
       "use": "@vercel/node"
     }
   ],
-  "rewrites": [{ "source": "/admin/(.*)", "destination": "/admin" }]
+  "routes": [
+
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
