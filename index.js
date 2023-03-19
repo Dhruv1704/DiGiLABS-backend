@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 connectToMongo()
 
 app.use(cors({
-    origin: "https://digilabs-assignment.web.app/admin",
+    origin: "*",
 }))
 app.use(express.json())
 
