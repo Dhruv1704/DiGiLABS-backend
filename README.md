@@ -9,4 +9,4 @@ The backend then stores this data in the MongoDB database.
 The frontend mainpage retrieve the text and base64 code and displays the updated text and image. 
 
 
-https://dhruv1704.github.io/digilabs-video/
+![Digilabs](https://user-images.githubusercontent.com/99264611/226194922-bfca8bad-de9a-45b6-ba1c-038a0667935c.gif)
