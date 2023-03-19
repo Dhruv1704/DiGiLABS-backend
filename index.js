@@ -15,6 +15,7 @@ app.use(express.json())
 app.get('/',async (req,res)=>{
     const admin = await Admin.find()
     const data = admin[0]
+    app.use(express.json())
     res.json(data)
 })
 
