@@ -10,16 +10,10 @@ const port = process.env.PORT || 5000;
 
 connectToMongo()
 
-app.use(cors())
+app.use(cors({
+    origin: "https://digilabs-assignment.web.app"
+}))
 app.use(express.json())
-
-app.use(
-    createProxyMiddleware('/admin',
-        {
-            target: 'https://id.kiotviet.vn',
-            changeOrigin: true
-        }));
-
 
 app.get('/', async (req, res) => {
     const admin = await Admin.find()
