@@ -18,6 +18,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage:storage})
 
+router.get('/',(req, res)=>{
+    console.log("Admin page")
+})
+
 router.post('/', upload.single('testImage'),(req,res)=>{
     const admin = Admin.create({
         text: req.body.text,
